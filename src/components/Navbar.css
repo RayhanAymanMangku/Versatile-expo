@@ -1,0 +1,13 @@
+a {
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 620px) {
+    #startBtn {
+        display: flex;
+        margin: auto;
+        width: 98%;
+        padding-left: 40%;
+        padding-right: 40%;
+    }
+}
