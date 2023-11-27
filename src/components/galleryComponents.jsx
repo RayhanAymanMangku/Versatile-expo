@@ -7,10 +7,9 @@ import {
     CardFooter,
     Typography,
     Button,
-    Tooltip,
     IconButton,
 } from "@material-tailwind/react";
-import card from "@material-tailwind/react/theme/components/card";
+
 
 
 export function CategoryButtons() {
