@@ -9,19 +9,21 @@ import {
     Button,
     IconButton,
 } from "@material-tailwind/react";
-
-
+import { Modal } from "@material-tailwind/react";
+// import { BookingCard } from "./BookingCard";
+import { BasicModal } from "../components/BookingModal";
+import './galleryComponent.css'
 
 export function CategoryButtons() {
-    const categories = ['All', 'Carnival', 'Waterboom', 'Concert', 'Social Event'];
+    const categories = ['All', 'Carnival', 'Waterboom', 'Tourist', 'Zoo'];
 
     return (
-        <div className="flex items-center justify-center py-4 md:py-8 flex-wrap mt-2" style={{ marginBottom: '-35px' }}>
+        <div className="flex items-center justify-center py-4 md:py-8 flex-wrap mt-2" style={{ marginBottom: '-35px' }} id="kategori">
             {categories.map((category, index) => (
                 <button
                     key={index}
                     type="button"
-                    className="text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800"
+                    className="text-white bg-none transition-colors duration-300 rounded-full px-6 py-2 text-sm font-medium mr-4 mb-2 border border-white hover:bg-white hover:text-blue-gray-700"
                 >
                     {category}
                 </button>
@@ -32,16 +34,23 @@ export function CategoryButtons() {
 
 // card 
 export function BookingCard({ title, desc, img, price }) {
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
+    // Di komponen yang menggunakan BookingCard
+    const handleOpenModal = () => setIsModalOpen(true);
+
+    const handleCloseModal = () => setIsModalOpen(false);
+
+
     return (
-        <Card className="w-full max-w-[26rem] shadow-lg">
+        <Card className="w-full max-w-[26rem] shadow-lg" id="card">
             <CardHeader floated={false} color="blue-gray">
                 <img
                     src={img}
                     alt="ui/ux review check"
-                    className="h-[150px] w-[80%]"
+                    className="h-[150px] w-[100%]"
                 />
-                <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
-                <IconButton
+                {/* <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " /> */}
+                {/* <IconButton
                     size="sm"
                     color="red"
                     variant="text"
@@ -55,15 +64,16 @@ export function BookingCard({ title, desc, img, price }) {
                     >
                         <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
                     </svg>
-                </IconButton>
+                </IconButton> */}
             </CardHeader>
+
             <CardBody>
                 <div className="mb-3 flex items-center justify-between">
-                    <Typography variant="h5" color="blue-gray" className="font-medium">
+                    <Typography variant="h5" color="white" className="font-medium">
                         {title}
                     </Typography>
                     <Typography
-                        color="blue-gray"
+                        color="white"
                         className="flex items-center gap-1.5 font-normal"
                     >
                         <svg
@@ -81,14 +91,14 @@ export function BookingCard({ title, desc, img, price }) {
                         5.0
                     </Typography>
                 </div>
-                <Typography color="gray">
+                <Typography color="white">
                     <div className=" text-justify" style={{ textJustify: 'inter-word', margin: '0 auto' }}>
 
                         {desc}
                     </div>
                 </Typography>
                 <div className="group mt-8 inline-flex flex-wrap items-center gap-3">
-                    <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10  hover:!opacity-100 group-hover:opacity-70">
+                    <span className="cursor-pointer rounded-full border border-white bg-gray-900/5 p-3 text-white transition-colors hover:border-gray-900/10  hover:!opacity-100 group-hover:opacity-70">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
@@ -105,14 +115,14 @@ export function BookingCard({ title, desc, img, price }) {
                         </svg>
                     </span>
                 </div>
-                <div className="text-gray-600 mt-1">
+                <div className="text-white mt-1">
                     {price}
                 </div>
             </CardBody>
+
             <CardFooter className="pt-3">
-                <Button size="lg" fullWidth={true}>
-                    Booking Now
-                </Button>
+                <BasicModal isOpen={isModalOpen} onClose={handleCloseModal}>
+                </BasicModal>
             </CardFooter>
         </Card>
     );
@@ -133,36 +143,38 @@ export function GalleryComponent() {
         },
         {
             id: 2,
-            title: 'Aldi Taher',
+            title: "Seaworld",
             desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident velit, dolor dignissimos hic porro maxime pariatur inventore unde quo voluptas maiores rem fugit explicabo!',
-            price: 'Start from IDR 100k',
-            img: 'https://s3-ap-southeast-1.amazonaws.com/loket-production-sg/images/banner/20230615061229.jpg'
-
+            img: 'https://media.istockphoto.com/id/1389768890/id/foto/seaworld-san-diego.jpg?s=1024x1024&w=is&k=20&c=qcUGB_p-zWWFZ79LthaiA-eN_mTasaLxm4fWsyNHIa8=',
+            price: 'Weekdays IDR 150k - Weekend IDR 200k',
         },
         {
             id: 3,
-            title: 'Aldi Taher',
+            title: "Bali Zoo",
             desc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident velit, dolor dignissimos hic porro maxime pariatur inventore unde quo voluptas maiores rem fugit explicabo!',
-            price: '14k',
-            img: 'https://s3-ap-southeast-1.amazonaws.com/loket-production-sg/images/banner/20230615061229.jpg'
+            img: 'https://momopururu.com/wp-content/uploads/2023/03/BaliZoo_Momo_19.jpg',
+            price: 'Weekdays IDR 150k - Weekend IDR 200k',
+        }
 
-        },
+
     ]);
 
     return (
-        <div>
-            <CategoryButtons />
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-28">
-                {content.map((cardContent) => (
-                    <BookingCard
-                        key={cardContent.id}
-                        title={cardContent.title}
-                        desc={cardContent.desc}
-                        img={cardContent.img}
-                        price={cardContent.price}
-                    />
-                ))}
+        <>
+            <div>
+                <CategoryButtons />
+                <div className="grid grid-cols-3 gap-4 md:p-28" id="cardDisplay">
+                    {content.map((cardContent) => (
+                        <BookingCard
+                            key={cardContent.id}
+                            title={cardContent.title}
+                            desc={cardContent.desc}
+                            img={cardContent.img}
+                            price={cardContent.price}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 };

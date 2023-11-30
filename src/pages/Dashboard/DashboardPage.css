@@ -1,3 +1,28 @@
 .dp {
+  /* background-image: none; */
+  /* background-image: url(../../../public/assets/bg3.jpg); */
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.9);
+  background-blend-mode: overlay;
+}
+
+/* DashboardPage.css */
+.dp.dark-mode {
+  background-color: #232323;
+  color: yellow;
+  /* ... tambahkan lebih banyak gaya sesuai kebutuhan Anda */
+}
+
+@media only screen and (max-width: 520px) {
+  .dp {
     background-image: none;
+    background-color: hsla(0, 0%, 0%, 0.9);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
 }

@@ -1,7 +1,23 @@
 .lp {
-    background-image: url(../../../public/assets/bg8.png);
+  /* background-image: url(../../../public/assets/2.jpg); */
+  /* background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh; */
+  background-color: hsla(0, 0%, 0%, 0.4);
+  /* background-blend-mode: overlay; */
+  /* transition: 1s ease-in-out; */
+}
+
+@media only screen and (max-width: 520px) {
+  .lp {
+    background-image: url(../../../public/assets/2.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;
     height: 100vh;
+    background-color: hsla(0, 0%, 0%, 0.4);
+    background-blend-mode: overlay;
+    /* overflow-y: hidden; */
+  }
 }
