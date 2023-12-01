@@ -18,17 +18,21 @@ export function CategoryButtons() {
     const categories = ['All', 'Carnival', 'Waterboom', 'Tourist', 'Zoo'];
 
     return (
-        <div className="flex items-center justify-center py-4 md:py-8 flex-wrap mt-2" style={{ marginBottom: '-35px' }} id="kategori">
-            {categories.map((category, index) => (
-                <button
-                    key={index}
-                    type="button"
-                    className="text-white bg-none transition-colors duration-300 rounded-full px-6 py-2 text-sm font-medium mr-4 mb-2 border border-white hover:bg-white hover:text-blue-gray-700"
-                >
-                    {category}
-                </button>
-            ))}
-        </div>
+        <>
+            <div className="flex items-center justify-center py-4 md:py-8 flex-wrap mt-2" style={{ marginBottom: '-35px' }} id="kategori">
+                {categories.map((category, index) => (
+                    <button
+                        key={index}
+                        type="button"
+                        className="text-white bg-none transition-colors duration-300 rounded-full px-6 py-2 text-sm font-medium mr-4 mb-2 border border-white hover:bg-white hover:text-blue-gray-700"
+                    >
+                        {category}
+                    </button>
+
+                ))}
+            </div>
+            <hr className="w-[40%] mx-auto mt-6" />
+        </>
     );
 };
 
