@@ -1,0 +1,7 @@
+.transaction {
+  background-color: rgb(14, 17, 22);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-blend-mode: overlay;
+}

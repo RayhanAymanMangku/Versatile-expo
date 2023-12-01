@@ -1,12 +1,13 @@
 .lp {
-  /* background-image: url(../../../public/assets/2.jpg); */
-  /* background-position: center;
+  background-position: center;
   background-size: cover;
   width: 100%;
-  height: 100vh; */
+  height: 100vh;
   background-color: hsla(0, 0%, 0%, 0.4);
-  /* background-blend-mode: overlay; */
-  /* transition: 1s ease-in-out; */
+  background-blend-mode: overlay;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 @media only screen and (max-width: 520px) {

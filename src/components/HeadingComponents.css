@@ -24,3 +24,22 @@
     margin-left: 50px;
   }
 }
+
+@media only screen and (min-width: 1480px) {
+  #textAbout {
+    margin-left: 188px;
+  }
+}
+#cardHeading {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+}
+
+#card-wrap {
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#cardHeader {
+  background-color: transparent;
+}

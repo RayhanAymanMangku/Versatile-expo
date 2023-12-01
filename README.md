@@ -68,3 +68,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+ <div className="flex mt-8">
+                        <div className="w-1/2 p-4">
+                            {/* Konten Kolom 1 */}
+                            <div className="bg-gray-200 p-4">
+                                {/* <h2 className="text-lg font-bold">Column 1</h2> */}
+                                <p>Isi kolom pertama di sini...</p>
+                            </div>
+                        </div>
+                        <div className="w-1/2 p-4">
+                            {/* Konten Kolom 2 */}
+                            <div className=" p-4">
+                                {/* <h2 className="text-lg font-bold ">Column 2</h2> */}
+                                <p className='w-[400px] text-white' style={{ textJustify: 'inter-word', margin: '0 auto' }}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, nesciunt similique? Adipisci distinctio, totam quod doloribus autem consequatur nesciunt ipsa beatae voluptates ducimus aperiam.</p>
+                            </div>
+                        </div>
+                    </div>
+
+<div className="w-[80%] mx-auto mt-12">
+                <Typography variant="h4" color="white">
+                    Description
+                </Typography>
+                <div className="w-[50%] text-start text-white mt-2">
+                    {/* {description} */}Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt rerum repudiandae temporibus. Velit architecto mollitia quaerat dignissimos dolor, fugiat ullam doloribus distinctio similique iusto.
+                </div>
+            </div>
