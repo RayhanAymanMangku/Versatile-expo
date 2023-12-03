@@ -67,6 +67,9 @@ export function LandingPageHeading() {
                         <div className='ms-[140px]' id='textAbout'>About Us</div>
                     </div>
                     <HorizontalCard />
+                    <div className="text-white text-4xl font-semibold mt-12 pt-16 flex w-full mb-[-110px]">
+                        <div className='ms-[140px]'>Our Team</div>
+                    </div>
                     <ProfileCardComponent />
                 </div>
             </section>
@@ -82,7 +85,7 @@ export function ProfileCard({ name, position, img }) {
         <Card className="w-[280px] h-[380px] mx-auto" id='card-wrap'>
             <CardHeader floated={false} className="h-80 relative overflow-hidden">
                 <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${img})` }}></div>
-                <img src={img} alt="profile-picture" className="w-full h-full object-cover" />
+                <img src={img} alt="profile-picture" className="w-full h-full object-cover" id="img-profile" />
             </CardHeader>
             <CardBody className="text-center">
                 <Typography variant="h4" color="white" className="mb-2">
@@ -252,7 +255,7 @@ export function DetailProductComponent() {
                         <Typography variant="h4" color="white">
                             Description
                         </Typography>
-                        <div className="w-[70%] text-start text-white mt-2">
+                        <div className="w-[80%] text-start text-white mt-2">
                             {/* {description} */}Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt rerum repudiandae temporibus. Velit architecto mollitia quaerat dignissimos dolor, fugiat ullam doloribus distinctio similique iusto.
                         </div>
                     </div>
