@@ -116,6 +116,7 @@ export function RegistModal({ isOpen, onClose }) {
                                 Register your account to get full access.
                             </p>
                             <form action="#" method='post'>
+                                <input type="name" className="w-full p-3 border border-gray-300 rounded-md placeholder:font-light mb-3" placeholder='enter your username' />
                                 <input type="email" className="w-full p-3 border border-gray-300 rounded-md placeholder:font-light" placeholder='enter your email address' />
                                 <input type="password" className="w-full p-3 border border-gray-300 rounded-md placeholder:font-light mt-3" placeholder='enter your password' />
                             </form>
