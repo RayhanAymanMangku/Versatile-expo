@@ -4,17 +4,13 @@ import {
     Typography,
     IconButton,
     Avatar,
-    Navbar,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import '../components/Navbar.css'
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginModal from "./LoginModalComponent";
-import CartPage from "../pages/cart_page/CartPage";
-// import { DarkModeSwitch } from "react-toggle-dark-mode";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
 
 
 function NavList() {
@@ -28,7 +24,7 @@ function NavList() {
         setLoginModalOpen(false);
     };
     return (
-        <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+        <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
             <Typography
                 as="li"
                 variant="small"
@@ -55,7 +51,7 @@ function NavList() {
                 color="blue-gray"
                 className="p-1 font-medium pl-2"
             >
-                <Link to='#aboutSec' className="flex items-center hover:text-blue-500 transition-colors duration-300 text-white">
+                <Link to='' className="flex items-center hover:text-blue-500 transition-colors duration-300 text-white">
                     About Us
                 </Link>
             </Typography>
@@ -69,18 +65,15 @@ function NavList() {
 
 export function NavbarSimple() {
     const [openNav, setOpenNav] = React.useState(false);
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolled, setIsScrolled] = useState(false);
 
     const handleWindowResize = () =>
         window.innerWidth >= 960 && setOpenNav(false);
 
 
     React.useEffect(() => {
-        window.addEventListener("resize", handleWindowResize);
-        window.addEventListener('scroll', handleScroll);
-        return () => {
+        window.addEventListener("resize", handleWindowResize); return () => {
             window.removeEventListener("resize", handleWindowResize);
-            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
@@ -88,19 +81,24 @@ export function NavbarSimple() {
         setOpenNav(!openNav);
     };
 
-    const handleScroll = () => {
-        if (window.scrollY > 50) {
-            React.setScrolled(true);
-        } else {
-            React.setScrolled(false);
-        }
-    };
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            setIsScrolled(scrollPosition > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
 
     return (
         <>
             <navbar
-                className={`w-full mx-auto px-4 py-4 rounded-none border-none shadow-none transition-all ${scrolled ? 'bg-gray-900' : 'bg-transparent'
+                className={`fixed z-50 w-full mx-auto px-4 py-4 rounded-none border-none shadow-none transition-all ${scrolled ? 'bg-gray-900' : 'bg-transparent'
                     }`}
                 id="lpNavbar"
             >
@@ -321,12 +319,12 @@ export function DashboardNavbar2() {
                                         </a>
                                     </li>
                                     <li>
-                                        <a
-                                            href="#"
+                                        <Link
+                                            to='/cart'
                                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                                         >
-                                            Order
-                                        </a>
+                                            Your Order
+                                        </Link>
                                     </li>
                                     <li>
                                         <Link

@@ -29,6 +29,9 @@
   #textAbout {
     margin-left: 188px;
   }
+  #textServices {
+    margin-left: 188px;
+  }
 }
 #cardHeading {
   background-color: rgba(255, 255, 255, 0.1);
@@ -42,4 +45,10 @@
 
 #cardHeader {
   background-color: transparent;
+}
+
+#box {
+  position: relative;
+  top: 550px;
+  margin: auto;
 }

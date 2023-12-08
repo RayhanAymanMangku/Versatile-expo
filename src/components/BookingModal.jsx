@@ -175,42 +175,5 @@ export function BtnPayment() {
     )
 }
 
-const PaymentForm = () => {
-    return (
-        <div className="flex justify-center items-center h-screen bg-gray-100">
-            <div className="max-w-md w-full">
-                <div className="bg-white p-8 rounded shadow-md">
-                    <h2 className="text-2xl font-semibold mb-6">Payment Details</h2>
-                    <div className="mb-4">
-                        <label htmlFor="cardNumber" className="block text-gray-600">Card Number</label>
-                        <input type="text" id="cardNumber" className="form-input mt-1 p-2 w-full border" />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="cardHolder" className="block text-gray-600">Card Holder</label>
-                        <input type="text" id="cardHolder" className="form-input mt-1 p-2 w-full border" />
-                    </div>
-                    <div className="flex mb-4">
-                        <div className="w-1/2 mr-2">
-                            <label htmlFor="expiryDate" className="block text-gray-600">Expiry Date</label>
-                            <input type="text" id="expiryDate" placeholder="MM/YY" className="form-input mt-1 p-2 w-full border" />
-                        </div>
-                        <div className="w-1/2 ml-2">
-                            <label htmlFor="cvv" className="block text-gray-600">CVV</label>
-                            <input type="text" id="cvv" className="form-input mt-1 p-2 w-full border" />
-                        </div>
-                    </div>
-                </div>
-                <div className="mt-6 bg-white p-4 rounded shadow-md flex justify-between items-center">
-                    <div className="flex">
-                        <img src="https://via.placeholder.com/50x30" alt="Visa Logo" className="mr-2" />
-                        <img src="mastercard-logo.png" alt="Mastercard Logo" />
-                        {/* Add more card logos as needed */}
-                    </div>
-                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Pay Now</button>
-                </div>
-            </div>
-        </div>
-    );
-};
 
-export default PaymentForm;
+

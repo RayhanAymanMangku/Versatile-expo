@@ -3,74 +3,60 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './HeadingComponents.css';
 import './ProfileCard.css';
 import { useRef, useEffect, useState } from 'react';
+import { Spinner } from "@material-tailwind/react";
 import {
     Card,
     CardHeader,
     CardBody,
     Typography,
-    Button,
     CardFooter,
     Tooltip,
 } from "@material-tailwind/react";
 import { BtnPayment } from './BookingModal';
+import { CarouselCustomNavigation } from './AdvCarouselComponent';
+import CardPayment from './CardPayment';
 
+const fontFamily = {
+    system: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+};
 
 export function LandingPageHeading() {
-    const inputStyle = {
-        border: '1px solid #e5e7eb',
-        padding: '8px',
-        width: '100%',
+    // const inputStyle = {
+    //     border: '1px solid #e5e7eb',
+    //     padding: '8px',
+    //     width: '100%',
 
-    };
-
-
-    const itemRef = useRef();
-
-    const handleScroll = () => {
-        const item = itemRef.current;
-
-        if (item) {
-            const rect = item.getBoundingClientRect();
-            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-            if (rect.top <= windowHeight * 0.75) {
-                // Tambahkan kelas 'active' ketika item terlihat
-                item.classList.add('active');
-            }
-        }
-
-    }
-
-    useEffect(() => {
-        // Tambahkan listener scroll saat komponen dimount
-        window.addEventListener('scroll', handleScroll);
-        // Hapus listener saat komponen dibongkar
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []); // Efek ini akan hanya dijalankan sekali saat komponen dimount
+    // };
 
 
     return (
 
         <>
+            <div className="box">
+            </div>
             <div className="flex">
-                <div className='heading-wrap'>
+                <div className='heading-wrap mt-10'>
                     <h1 className="text-left font-semibold text-white mt-36 ms-36 sm:text-3xl md:text-5xl w-[520px]">Entertainment Right In Front of you. Book your tickets Now</h1>
-                    <p className="text-left font-light text-gray-300 mt-7 ms-36" style={{ width: '500px' }}>Easy Booking, Guaranteed Entertainment.</p>
+                    <p className="text-left font-light text-gray-300 mt-7 ms-36 w-[500px]" style={fontFamily}>Easy Booking, Guaranteed Entertainment.</p>
                     <button className="bg-blue-700 hover:bg-blue-800 transition-colors text-white px-4 py-1 rounded-md duration-300 mt-5 ms-36">
-                        <Link to='/dashboard' className='font-normal'>Get Started</Link>
+                        <Link to='/dashboard' className='font-normal' style={fontFamily}>Get Started</Link>
                     </button>
                 </div>
             </div>
             <section>
-                <div className="items" ref={itemRef} style={{ marginTop: '500px', backgroundColor: 'rgb(14, 17, 22)' }}>
-                    <div className="text-white text-4xl font-semibold mt-12 pt-16 flex w-full" id='aboutSec'>
+                <div className="flex w-[80%]" id='box'>
+                    <CarouselCustomNavigation />
+                </div>
+                <div className="items" style={{ marginTop: '700px', backgroundColor: 'rgb(14, 17, 22)' }}>
+                    <div className="text-white text-4xl font-semibold mt-[-500px] pt-[400px] flex w-full" id='aboutSec'>
                         <div className='ms-[140px]' id='textAbout'>About Us</div>
                     </div>
                     <HorizontalCard />
                     <div className="text-white text-4xl font-semibold mt-12 pt-16 flex w-full mb-[-110px]">
-                        <div className='ms-[140px]'>Our Team</div>
+                        <div className='ms-[140px] ' id='textServices'>Services</div>
                     </div>
-                    <ProfileCardComponent />
+                    {/* <ProfileCardComponent /> */}
+                    <OurServices />
                 </div>
             </section>
 
@@ -361,8 +347,8 @@ export function TransactionHeading() {
                 </div>
 
                 {/* Kolom kedua */}
-                <div className="flex w-full items-center"> {/* Menggunakan items-center untuk membuat ikon dan teks berada di tengah */}
-                    <div className="mr-4" style={{ marginTop: '-250px' }}> {/* Margin kanan untuk memberikan jarak antara ikon dan teks */}
+                <div className="flex w-full items-center" style={{ marginTop: '-200px' }}> {/* Menggunakan items-center untuk membuat ikon dan teks berada di tengah */}
+                    <div className="flex flex-row w-[200px]">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
@@ -377,18 +363,95 @@ export function TransactionHeading() {
                             />
                             <path d="M2.25 18a.75.75 0 000 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 00-.75-.75H2.25z" />
                         </svg>
+                        <div className="flex flex-col">
+                            <Typography variant="h5" color="black">
+                                Total Price
+                            </Typography>
+                            <Typography color="gray" className="mt-2 font-normal">
+                                Rp. 100.000 {/* Ganti dengan logika kalkulasi total */}
+                            </Typography>
+                        </div>
                     </div>
-                    <div style={{ marginTop: '-250px' }}>
-                        <Typography variant="h5" color="black">
-                            Total Price
-                        </Typography>
-                        <Typography color="gray" className="mt-2 font-normal">
-                            Rp. 300.000 {/* Ganti dengan logika kalkulasi total */}
-                        </Typography>
+                    <div className="flex flex-row">
+                        <svg width="30px" height="30px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#000000" fill-rule="evenodd" d="M107,154.006845 C107,153.45078 107.449949,153 108.006845,153 L119.993155,153 C120.54922,153 121,153.449949 121,154.006845 L121,165.993155 C121,166.54922 120.550051,167 119.993155,167 L108.006845,167 C107.45078,167 107,166.550051 107,165.993155 L107,154.006845 Z M108,157 L120,157 L120,166 L108,166 L108,157 Z M116.5,163.5 L116.5,159.5 L115.757485,159.5 L114.5,160.765367 L114.98503,161.275112 L115.649701,160.597451 L115.649701,163.5 L116.5,163.5 Z M112.5,163.5 C113.412548,163.5 114,163.029753 114,162.362119 C114,161.781567 113.498099,161.473875 113.110266,161.433237 C113.532319,161.357765 113.942966,161.038462 113.942966,160.550798 C113.942966,159.906386 113.395437,159.5 112.505703,159.5 C111.838403,159.5 111.359316,159.761248 111.051331,160.115385 L111.456274,160.632075 C111.724335,160.370827 112.055133,160.231495 112.425856,160.231495 C112.819392,160.231495 113.13308,160.382438 113.13308,160.690131 C113.13308,160.974601 112.847909,161.102322 112.425856,161.102322 C112.28327,161.102322 112.020913,161.102322 111.952471,161.096517 L111.952471,161.839623 C112.009506,161.833817 112.26616,161.828012 112.425856,161.828012 C112.956274,161.828012 113.190114,161.967344 113.190114,162.275036 C113.190114,162.565312 112.93346,162.768505 112.471483,162.768505 C112.10076,162.768505 111.684411,162.605951 111.427757,162.327286 L111,162.87881 C111.279468,163.227141 111.804183,163.5 112.5,163.5 Z M110,152.5 C110,152.223858 110.214035,152 110.504684,152 L111.495316,152 C111.774045,152 112,152.231934 112,152.5 L112,153 L110,153 L110,152.5 Z M116,152.5 C116,152.223858 116.214035,152 116.504684,152 L117.495316,152 C117.774045,152 118,152.231934 118,152.5 L118,153 L116,153 L116,152.5 Z" transform="translate(-107 -152)"></path> </g></svg>
+                        <div className="flex flex-col">
+                            <Typography variant="h5" color="black">
+                                Date
+                            </Typography>
+                            <Typography color="gray" className="mt-2 font-normal">
+                                12/12/2021 {/* Ganti dengan logika kalkulasi total */}
+                            </Typography>
+                        </div>
+                    </div>
+                    <div className="box w-[200px] h-[200px] mt-[340px] ml-[-270px]">
+                        <div className="flex flex-col">
+                            <Typography variant="h5" color="black">
+                                Payment Method
+                            </Typography>
+                            <div className="flex w-[200px] ">
+                                <div className="flex flex-row gap-2 ">
+                                    <div>
+                                        <img src="/assets/visa.svg" alt="" className='w-[35px] h-[35px]' />
+                                    </div>
+                                    <div>
+                                        <img src="/assets/mastercard.svg" alt="" className='w-[35px] h-[35px]' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </figure>
 
+            <div className="flex w-[80%] mx-auto rounded-xl mt-8">
+                <CardPayment />
+                <TermsCondition />
+            </div>
+
+        </>
+    )
+}
+
+
+export function TermsCondition() {
+    return (
+        <>
+            <div className="flex w-[50%] mt-8 ml-4 text-white">
+                Our Privacy Policy explains how we collect, use, and protect your personal information. By using our Website and Services, you agree to the terms of our Privacy Policy.
+            </div>
+
+        </>
+    )
+}
+
+
+export function CustomSpinner() {
+
+    return (
+        <>
+            <Spinner className="h-16 w-16 text-white" />
+        </>
+    )
+
+
+}
+
+
+export function OurServices() {
+    return (
+        <>
+            <div className="grid grid-cols-3 gap-[180px] p-36 mx-auto">
+                <div class="relative h-[250px] w-[250px] border border-white rounded-xl hover:bg-white">
+                    <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/info.png" alt="" />
+                </div>
+                <div class="relative h-[250px] w-[250px] border border-white rounded-xl">
+                    <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/tiket.png" alt="" />
+                </div>
+                <div class="relative h-[250px] w-[250px] border border-white rounded-xl">
+                    <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/info.png" alt="" />
+                </div>
+
+            </div>
         </>
     )
 }
