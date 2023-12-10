@@ -68,8 +68,12 @@ export function CarouselCustomNavigation() {
             caption: "Pura Ulun Bedugul, Bali",
         },
         {
-            src: 'https://i.pinimg.com/564x/7d/9d/2b/7d9d2b707033d12994f91060eac7978c.jpg',
+            src: 'https://images.unsplash.com/photo-1602154663343-89fe0bf541ab?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             caption: "Mount Bromo, East Java",
+        },
+        {
+            src: 'https://images.unsplash.com/photo-1657788405193-c2039edaad6b?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            caption: "Padar Island, Labuan Bajo",
         },
         // Add more images with captions as needed
     ];

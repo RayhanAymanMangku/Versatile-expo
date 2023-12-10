@@ -100,54 +100,6 @@ export function ProfileCard({ name, position, img }) {
 }
 
 
-// isi card
-export function ProfileCardComponent() {
-
-    const [content, setContent] = useState([
-        {
-            id: 1,
-            name: "Rayhan Ayman",
-            position: "Front End Developer",
-            img: "/assets/ayman.jpg",
-        },
-        {
-            id: 2,
-            name: "Hud Satya Ginting",
-            position: "Backend Developer",
-            img: "https://docs.material-tailwind.com/img/team-2.jpg",
-        },
-        {
-            id: 3,
-            name: "Rifandito Daniswara",
-            position: "Project Manager",
-            img: "https://docs.material-tailwind.com/img/team-3.jpg",
-        },
-        {
-            id: 4,
-            name: "Danesta Restu K",
-            position: "UI/UX Designer",
-            img: "/assets/danes.jpg",
-        },
-    ]);
-
-    return (
-        <>
-            <div>
-                <div className="grid grid-cols-4 gap-2 md:p-[140px] mx-auto" id="cardDisplay">
-                    {content.map((cardContent) => (
-                        <ProfileCard
-                            key={cardContent.id}
-                            img={cardContent.img}
-                            name={cardContent.name}
-                            position={cardContent.position}
-                        />
-                    ))}
-                </div>
-            </div>
-        </>
-    );
-};
-
 
 export function HorizontalCard() {
     return (
@@ -243,7 +195,7 @@ export function DetailProductComponent() {
                             Description
                         </Typography>
                         <div className="w-[80%] text-start text-white mt-2">
-                            {/* {description} */}Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt rerum repudiandae temporibus. Velit architecto mollitia quaerat dignissimos dolor, fugiat ullam doloribus distinctio similique iusto.
+                            {/* {description} */}Seaworld Ancol adalah taman hiburan keluarga di Jakarta, menyajikan atraksi lumba-lumba, pertunjukan satwa, dan wahana seru untuk pengalaman liburan yang mengesankan.
                         </div>
                     </div>
                 </div>
@@ -253,7 +205,7 @@ export function DetailProductComponent() {
                         <Card className=" w-[400px] ms-auto">
                             <CardBody>
                                 <Typography variant="h5" className="mb-2 pb-1 text-gray-700 border-b">
-                                    Rp. 100.000 / Ticket {/* {harga} */}
+                                    Rp. 70.000 / Ticket {/* {harga} */}
                                 </Typography>
                                 <form action="">
                                     <div className="relative flex items-center max-w-[11rem]">
@@ -438,24 +390,24 @@ export function CustomSpinner() {
 }
 
 
-export function OurServices() {
-    return (
-        <>
-            <div className="grid grid-cols-3 gap-[180px] p-36 mx-auto">
-                <div class="relative h-[250px] w-[250px] border border-white rounded-xl hover:bg-white mx-auto">
-                    <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/info.png" alt="" />
-                </div>
-                <div class="relative h-[250px] w-[250px] border border-white rounded-xl mx-auto">
-                    <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/tiket.png" alt="" />
-                </div>
-                <div class="relative h-[250px] w-[250px] border border-white rounded-xl mx-auto">
-                    <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/info.png" alt="" />
-                </div>
+// export function OurServices() {
+//     return (
+//         <>
+//             <div className="grid grid-cols-3 gap-[180px] p-36 mx-auto">
+//                 <div class="relative h-[250px] w-[250px] border border-white rounded-xl hover:bg-white mx-auto">
+//                     <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/info.png" alt="" />
+//                 </div>
+//                 <div class="relative h-[250px] w-[250px] border border-white rounded-xl mx-auto">
+//                     <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/tiket.png" alt="" />
+//                 </div>
+//                 <div class="relative h-[250px] w-[250px] border border-white rounded-xl mx-auto">
+//                     <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/info.png" alt="" />
+//                 </div>
 
-            </div>
-        </>
-    )
-}
+//             </div>
+//         </>
+//     )
+// }
 
 export function CardCart() {
     return (
@@ -548,24 +500,24 @@ const GallerySection = () => {
                         <img
                             alt="gallery"
                             class="block h-full w-full rounded-lg object-cover object-center"
-                            src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp" />
+                            src="https://i.pinimg.com/564x/46/1f/fd/461ffd85c528a1b49e8a3081a3b87dba.jpg" />
                     </div>
                     <div class="w-1/2 p-1 md:p-2">
                         <img
                             alt="gallery"
                             class="block h-full w-full rounded-lg object-cover object-center"
-                            src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" />
+                            src="https://i.pinimg.com/564x/d1/a8/bf/d1a8bfecfe958b323c274d1968b006ff.jpg" />
                     </div>
                     <div class="w-full p-1 md:p-2">
                         <img
                             alt="gallery"
                             class="block h-full w-full rounded-lg object-cover object-center"
-                            src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" />
+                            src="https://i.pinimg.com/originals/45/05/46/45054604b7873b602df111c3af7a53ed.jpg" />
                     </div>
                 </div>
                 <div class="flex w-1/2 flex-wrap mt-1">
-                    <p className='ml-12 text-white text-lg'>Thank you for choosing our services. We are proud to offer the best entertainment experience through access tickets to the fun-filled carnival, refreshing water park, natural beauty at the zoo, and unforgettable sightseeing trips. Find fun and excitement with us in every ticket the one you choose!</p>
-                    <div className='mt-28'>
+                    <p className='ml-12 text-white text-lg'>Thank you for choosing our services. We are proud to offer the best entertainment experience through access tickets to the fun-filled carnival, refreshing water park, natural beauty at the zoo, and unforgettable sightseeing trips. Find fun and excitement with us in every ticket the one you choose! <br /> If you have a question you can send by email to <span className='font-semibold text-blue-500'>versatile@company.co.id</span> </p>
+                    <div className=' mt-[310px]'>
                         <form action="#" method='POST'>
                             <label htmlFor="message">
                                 <textarea

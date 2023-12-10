@@ -7,8 +7,7 @@ import {
     CardBody,
     CardFooter,
     Typography,
-    Button,
-    IconButton,
+
 } from "@material-tailwind/react";
 import './galleryComponent.css'
 import { BtnBooking } from "./BookingModal";
@@ -97,7 +96,7 @@ export function BookingCard({ title, desc, img, price }) {
                     </span>
                 </div>
                 <div className="text-white mt-1">
-                    {price}
+                    Harga Rp. {price}
                 </div>
             </CardBody>
 
@@ -115,12 +114,13 @@ export function GalleryComponent() {
     const [content, setContent] = useState([]);
 
     useEffect(() => {
-        // Mengambil data dari endpoint PHP
-        fetch('http://localhost/Database/Tiket.php')
+        fetch('http://localhost/Database/Tiket.php')  // Sesuaikan dengan URL server dan endpoint
             .then(response => response.json())
             .then(data => setContent(data))
             .catch(error => console.error('Error:', error));
     }, []);
+
+
 
     return (
         <>

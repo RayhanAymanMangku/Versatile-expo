@@ -16,6 +16,7 @@ export default function App() {
           <Routes>
             <Route exact path="/home" Component={LandingPage}></Route>
             <Route path="/dashboard" Component={DashboardPage}></Route>
+            <Route path="/dashboard" element={DashboardPage} />
             <Route path="/cart" Component={CartPage}></Route>
             <Route path="/detailProduct" Component={DetailProduct}></Route>
             <Route path="/transactionPage" Component={Transaction_Page}></Route>
