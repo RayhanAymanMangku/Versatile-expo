@@ -426,36 +426,44 @@ export function CartNavbar() {
                 </div>
 
                 <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ms-auto">
-                    <Typography
-                        as="li"
-                        variant="small"
-                        color="blue-gray"
-                        className="p-1 font-medium pl-2"
-                    >
-                        <Link to='/dashboard' className="flex items-center hover:text-blue-500 transition-colors duration-300 text-white" id="liHome">
-                            Home
-                        </Link>
-                    </Typography>
-                    <Typography
-                        as="li"
-                        variant="small"
-                        color="blue-gray"
-                        className="p-1 font-medium pl-2"
-                    >
-                        <Link href="#" className="flex items-center hover:text-blue-500 transition-colors duration-300 text-white">
-                            Services
-                        </Link>
-                    </Typography>
-                    <Typography
-                        as="li"
-                        variant="small"
-                        color="blue-gray"
-                        className="p-1 font-medium pl-2"
-                    >
-                        <Link to={{}} className="flex items-center hover:text-blue-500 transition-colors duration-300 text-white">
-                            About Us
-                        </Link>
-                    </Typography>
+                    <li>
+                        <Typography
+
+                            variant="small"
+                            color="blue-gray"
+                            className="p-1 font-medium pl-2"
+                        >
+                            <Link to='/dashboard' className="flex items-center hover:text-blue-500 transition-colors duration-300 text-white" id="liHome">
+                                Home
+                            </Link>
+                        </Typography>
+                    </li>
+                    <li>
+
+                        <Typography
+
+                            variant="small"
+                            color="blue-gray"
+                            className="p-1 font-medium pl-2"
+                        >
+                            <Link href="#" className="flex items-center hover:text-blue-500 transition-colors duration-300 text-white">
+                                Services
+                            </Link>
+                        </Typography>
+                    </li>
+                    <li>
+
+                        <Typography
+
+                            variant="small"
+                            color="blue-gray"
+                            className="p-1 font-medium pl-2"
+                        >
+                            <Link to={{}} className="flex items-center hover:text-blue-500 transition-colors duration-300 text-white">
+                                About Us
+                            </Link>
+                        </Typography>
+                    </li>
                 </ul>
 
                 {/* <DarkModeSwitch
@@ -515,12 +523,12 @@ export function CartNavbar() {
                                         </a>
                                     </li>
                                     <li>
-                                        <a
-                                            href="#"
+                                        <Link
+                                            to='/home'
                                             className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                                         >
                                             Sign out
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>

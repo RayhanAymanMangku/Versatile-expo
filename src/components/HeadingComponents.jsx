@@ -56,7 +56,8 @@ export function LandingPageHeading() {
                         <div className='ms-[140px] ' id='textServices'>Services</div>
                     </div>
                     {/* <ProfileCardComponent /> */}
-                    <OurServices />
+                    {/* <OurServices /> */}
+                    <GallerySection />
                 </div>
             </section>
 
@@ -416,7 +417,7 @@ export function TransactionHeading() {
 export function TermsCondition() {
     return (
         <>
-            <div className="flex w-[50%] mt-8 ml-4 text-white">
+            <div className="flex w-[50%] h-[750px] mt-[100px] ml-5 rounded-xl text-white">
                 Our Privacy Policy explains how we collect, use, and protect your personal information. By using our Website and Services, you agree to the terms of our Privacy Policy.
             </div>
 
@@ -441,13 +442,13 @@ export function OurServices() {
     return (
         <>
             <div className="grid grid-cols-3 gap-[180px] p-36 mx-auto">
-                <div class="relative h-[250px] w-[250px] border border-white rounded-xl hover:bg-white">
+                <div class="relative h-[250px] w-[250px] border border-white rounded-xl hover:bg-white mx-auto">
                     <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/info.png" alt="" />
                 </div>
-                <div class="relative h-[250px] w-[250px] border border-white rounded-xl">
+                <div class="relative h-[250px] w-[250px] border border-white rounded-xl mx-auto">
                     <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/tiket.png" alt="" />
                 </div>
-                <div class="relative h-[250px] w-[250px] border border-white rounded-xl">
+                <div class="relative h-[250px] w-[250px] border border-white rounded-xl mx-auto">
                     <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/info.png" alt="" />
                 </div>
 
@@ -455,3 +456,138 @@ export function OurServices() {
         </>
     )
 }
+
+export function CardCart() {
+    return (
+        <>
+            <figure className="relative grid grid-cols-1 md:grid-cols-2 gap-4 h-96 w-[80%] bg-white rounded-xl mt-8">
+                {/* Kolom pertama */}
+                <div className="flex">
+                    <img
+                        className="h-96 w-full rounded-xl object-cover object-center"
+                        alt="nature image"
+                        src='https://media.istockphoto.com/id/1389768890/id/foto/seaworld-san-diego.jpg?s=1024x1024&w=is&k=20&c=qcUGB_p-zWWFZ79LthaiA-eN_mTasaLxm4fWsyNHIa8='
+                    />
+                </div>
+
+                {/* Kolom kedua */}
+                <div className="flex w-full items-center h-[100px]" style={{ marginTop: '30px' }}> {/* Menggunakan items-center untuk membuat ikon dan teks berada di tengah */}
+                    <div className="flex flex-row w-[200px]">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="h-[20px] w-[20px] mr-2 mb-8 ml-2"
+                        >
+                            <path d="M12 7.5a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
+                            <path
+                                fillRule="evenodd"
+                                d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 14.625v-9.75zM8.25 9.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM18.75 9a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V9.75a.75.75 0 00-.75-.75h-.008zM4.5 9.75A.75.75 0 015.25 9h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75V9.75z"
+                                clipRule="evenodd"
+                            />
+                            <path d="M2.25 18a.75.75 0 000 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 00-.75-.75H2.25z" />
+                        </svg>
+                        <div className="flex flex-col">
+                            <Typography variant="h5" color="black">
+                                Total Price
+                            </Typography>
+                            <Typography color="gray" className="mt-2 font-normal">
+                                Rp. 100.000 {/* Ganti dengan logika kalkulasi total */}
+                            </Typography>
+                        </div>
+                    </div>
+                    <div className="flex flex-row">
+                        <svg width="30px" height="30px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#000000" fill-rule="evenodd" d="M107,154.006845 C107,153.45078 107.449949,153 108.006845,153 L119.993155,153 C120.54922,153 121,153.449949 121,154.006845 L121,165.993155 C121,166.54922 120.550051,167 119.993155,167 L108.006845,167 C107.45078,167 107,166.550051 107,165.993155 L107,154.006845 Z M108,157 L120,157 L120,166 L108,166 L108,157 Z M116.5,163.5 L116.5,159.5 L115.757485,159.5 L114.5,160.765367 L114.98503,161.275112 L115.649701,160.597451 L115.649701,163.5 L116.5,163.5 Z M112.5,163.5 C113.412548,163.5 114,163.029753 114,162.362119 C114,161.781567 113.498099,161.473875 113.110266,161.433237 C113.532319,161.357765 113.942966,161.038462 113.942966,160.550798 C113.942966,159.906386 113.395437,159.5 112.505703,159.5 C111.838403,159.5 111.359316,159.761248 111.051331,160.115385 L111.456274,160.632075 C111.724335,160.370827 112.055133,160.231495 112.425856,160.231495 C112.819392,160.231495 113.13308,160.382438 113.13308,160.690131 C113.13308,160.974601 112.847909,161.102322 112.425856,161.102322 C112.28327,161.102322 112.020913,161.102322 111.952471,161.096517 L111.952471,161.839623 C112.009506,161.833817 112.26616,161.828012 112.425856,161.828012 C112.956274,161.828012 113.190114,161.967344 113.190114,162.275036 C113.190114,162.565312 112.93346,162.768505 112.471483,162.768505 C112.10076,162.768505 111.684411,162.605951 111.427757,162.327286 L111,162.87881 C111.279468,163.227141 111.804183,163.5 112.5,163.5 Z M110,152.5 C110,152.223858 110.214035,152 110.504684,152 L111.495316,152 C111.774045,152 112,152.231934 112,152.5 L112,153 L110,153 L110,152.5 Z M116,152.5 C116,152.223858 116.214035,152 116.504684,152 L117.495316,152 C117.774045,152 118,152.231934 118,152.5 L118,153 L116,153 L116,152.5 Z" transform="translate(-107 -152)"></path> </g></svg>
+                        <div className="flex flex-col">
+                            <Typography variant="h5" color="black">
+                                Date
+                            </Typography>
+                            <Typography color="gray" className="mt-2 font-normal">
+                                12/12/2021 {/* Ganti dengan logika kalkulasi total */}
+                            </Typography>
+                        </div>
+                    </div>
+                    <div className="box w-[200px] h-[200px] mt-[340px] ml-[-270px]">
+                        <div className="flex flex-col">
+                            <Typography variant='h5' color="black">
+                                Guest
+                            </Typography>
+                            <Typography color="gray" className="mt-2 font-normal">
+                                Rayhan Ayman {/* Ganti dengan logika value dari input di cardpayment */}
+                            </Typography>
+
+                        </div>
+                        <div className="flex flex-col mt-8">
+                            <Typography variant="h5" color="black">
+                                Payment Method
+                            </Typography>
+                            <div className="flex w-[200px] ">
+                                <div className="flex flex-row gap-2 ">
+                                    <div>
+                                        <img src="/assets/visa.svg" alt="" className='w-[35px] h-[35px]' />
+                                    </div>
+                                    <div>
+                                        <img src="/assets/mastercard.svg" alt="" className='w-[35px] h-[35px]' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </>
+    )
+}
+
+const GallerySection = () => {
+    return (
+        <div class="container ms-16 px-5 py-2 lg:px-32 lg:pt-24 mt-14">
+            <div class="-m-1 flex flex-wrap md:-m-2">
+                <div class="flex w-1/2 flex-wrap">
+                    <div class="w-1/2 p-1 md:p-2">
+                        <img
+                            alt="gallery"
+                            class="block h-full w-full rounded-lg object-cover object-center"
+                            src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp" />
+                    </div>
+                    <div class="w-1/2 p-1 md:p-2">
+                        <img
+                            alt="gallery"
+                            class="block h-full w-full rounded-lg object-cover object-center"
+                            src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" />
+                    </div>
+                    <div class="w-full p-1 md:p-2">
+                        <img
+                            alt="gallery"
+                            class="block h-full w-full rounded-lg object-cover object-center"
+                            src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" />
+                    </div>
+                </div>
+                <div class="flex w-1/2 flex-wrap mt-1">
+                    <p className='ml-12 text-white text-lg'>Thank you for choosing our services. We are proud to offer the best entertainment experience through access tickets to the fun-filled carnival, refreshing water park, natural beauty at the zoo, and unforgettable sightseeing trips. Find fun and excitement with us in every ticket the one you choose!</p>
+                    <div className='mt-28'>
+                        <form action="#" method='POST'>
+                            <label htmlFor="message">
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="4"
+                                    cols="50"
+                                    className="w-[500px] h-[200px] mt-8 ml-12 rounded-xl p-2"
+                                    placeholder="Give us your feedback"
+                                >
+                                </textarea>
+
+                            </label>
+                            <button type="submit" className='px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors duration-300 ml-12'>
+                                Send
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default GallerySection;

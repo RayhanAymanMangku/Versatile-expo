@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CardPayment = () => {
     return (
         <>
             <div className=" flex items-center justify-center h-screen">
-                <div className="max-w-2xl lg:w-full p-8 border rounded-xl shadow-md">
+                <div className="max-w-2xl lg:w-full p-8 border rounded-xl shadow-md mt-[-40px]">
                     <h2 className="text-3xl font-semibold mb-4 text-center text-white">Checkout</h2>
                     <form action="#" method="POST">
                         <div className="mb-4">
@@ -96,7 +97,7 @@ const CardPayment = () => {
                                 type="submit"
                                 className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full"
                             >
-                                Pay Now
+                                <Link to='/cart' >Pay Now</Link>
                             </button>
                         </div>
                     </form>
