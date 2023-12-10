@@ -21,13 +21,6 @@ const fontFamily = {
 };
 
 export function LandingPageHeading() {
-    // const inputStyle = {
-    //     border: '1px solid #e5e7eb',
-    //     padding: '8px',
-    //     width: '100%',
-
-    // };
-
 
     return (
 
@@ -49,14 +42,12 @@ export function LandingPageHeading() {
                 </div>
                 <div className="items" style={{ marginTop: '700px', backgroundColor: 'rgb(14, 17, 22)' }}>
                     <div className="text-white text-4xl font-semibold mt-[-500px] pt-[400px] flex w-full" id='aboutSec'>
-                        <div className='ms-[140px]' id='textAbout'>About Us</div>
+                        <div className='ms-[140px] bg-gradient-to-r text-transparent bg-clip-text from-blue-500 to-white' id='textAbout'>About Us</div>
                     </div>
                     <HorizontalCard />
                     <div className="text-white text-4xl font-semibold mt-12 pt-16 flex w-full mb-[-110px]">
-                        <div className='ms-[140px] ' id='textServices'>Services</div>
+                        <div className='ms-[140px] bg-gradient-to-r text-transparent bg-clip-text from-blue-500 to-white' id='textServices'>Services</div>
                     </div>
-                    {/* <ProfileCardComponent /> */}
-                    {/* <OurServices /> */}
                     <GallerySection />
                 </div>
             </section>
@@ -389,26 +380,6 @@ export function CustomSpinner() {
 
 }
 
-
-// export function OurServices() {
-//     return (
-//         <>
-//             <div className="grid grid-cols-3 gap-[180px] p-36 mx-auto">
-//                 <div class="relative h-[250px] w-[250px] border border-white rounded-xl hover:bg-white mx-auto">
-//                     <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/info.png" alt="" />
-//                 </div>
-//                 <div class="relative h-[250px] w-[250px] border border-white rounded-xl mx-auto">
-//                     <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/tiket.png" alt="" />
-//                 </div>
-//                 <div class="relative h-[250px] w-[250px] border border-white rounded-xl mx-auto">
-//                     <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-auto max-w-full rounded-lg" src="/assets/info.png" alt="" />
-//                 </div>
-
-//             </div>
-//         </>
-//     )
-// }
-
 export function CardCart() {
     return (
         <>
@@ -499,19 +470,19 @@ const GallerySection = () => {
                     <div class="w-1/2 p-1 md:p-2">
                         <img
                             alt="gallery"
-                            class="block h-full w-full rounded-lg object-cover object-center"
+                            class="block h-full w-full rounded-lg object-cover object-center hover:opacity-75 transition-opacity duration-300"
                             src="https://i.pinimg.com/564x/46/1f/fd/461ffd85c528a1b49e8a3081a3b87dba.jpg" />
                     </div>
                     <div class="w-1/2 p-1 md:p-2">
                         <img
                             alt="gallery"
-                            class="block h-full w-full rounded-lg object-cover object-center"
+                            class="block h-full w-full rounded-lg object-cover object-center hover:opacity-75 transition-opacity duration-300"
                             src="https://i.pinimg.com/564x/d1/a8/bf/d1a8bfecfe958b323c274d1968b006ff.jpg" />
                     </div>
                     <div class="w-full p-1 md:p-2">
                         <img
                             alt="gallery"
-                            class="block h-full w-full rounded-lg object-cover object-center"
+                            class="block h-full w-full rounded-lg object-cover object-center hover:opacity-75 transition-opacity duration-300"
                             src="https://i.pinimg.com/originals/45/05/46/45054604b7873b602df111c3af7a53ed.jpg" />
                     </div>
                 </div>

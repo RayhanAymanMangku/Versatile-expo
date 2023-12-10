@@ -1,59 +1,3 @@
-// import { Carousel } from "@material-tailwind/react";
-// import { Typography } from "@material-tailwind/react";
-
-// export function CarouselCustomNavigation() {
-//     return (
-//         <>
-//             <h2 className="text-4xl text-white absolute z-50 top-[-70px] font-semibold">Popular Destination in <span className="text-4xl font-bold bg-gradient-to-r text-transparent bg-clip-text from-red-500 to-white">Indonesia</span></h2>
-//             <Carousel
-//                 className="rounded-xl w-full h-96 mx-auto mb-36"
-//                 navigation={({ setActiveIndex, activeIndex, length }) => (
-//                     <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-//                         {new Array(length).fill("").map((_, i) => (
-//                             <span
-//                                 key={i}
-//                                 className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
-//                                     }`}
-//                                 onClick={() => setActiveIndex(i)}
-//                             />
-//                         ))}
-//                     </div>
-//                 )}
-//             >
-
-//                 <img
-//                     src="https://images.unsplash.com/photo-1574080344876-1f4089ba07fe?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-//                     alt="image 2"
-//                     className="h-full w-full object-cover"
-
-//                 />
-
-
-//                 <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/30">
-//                     <div className="w-3/4 text-center md:w-2/4">
-//                         <Typography
-//                             variant="h1"
-//                             color="white"
-//                             className="mb-4 text-3xl md:text-4xl lg:text-5xl"
-//                         >
-//                             Kelingking Beach - Nusa Penida
-//                         </Typography>
-//                         <Typography
-//                             variant="lead"
-//                             color="white"
-//                             className="mb-12 opacity-50"
-//                         >
-//                             Kelingking Beach, Nusa Penida, offers breathtaking views with a T-Rex Bay formation. Accessible through a challenging 400m cliffside hike, it's a hidden gem for the adventurous.
-//                         </Typography>
-
-//                     </div>
-//                 </div>
-
-//             </Carousel>
-//         </>
-//     );
-// }
-
 import { Carousel } from "@material-tailwind/react";
 import { Typography } from "@material-tailwind/react";
 
@@ -80,6 +24,9 @@ export function CarouselCustomNavigation() {
 
     return (
         <>
+            <div className="absolute z-50 top-[-300px] w-full">
+                <img src="/assets/down-arrow-svgrepo-com.svg" alt="" className="mx-auto w-[30px] h-[30px]" />
+            </div>
             <h2 className="text-4xl text-white absolute z-50 top-[-70px] font-semibold">
                 Popular Destination in{" "}
                 <span className="text-4xl font-bold bg-gradient-to-r text-transparent bg-clip-text from-red-500 to-white">

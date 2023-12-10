@@ -96,7 +96,7 @@ export function BookingCard({ title, desc, img, price }) {
                     </span>
                 </div>
                 <div className="text-white mt-1">
-                    Harga Rp. {price}
+                    Price: <span className="ml-2"></span> Rp. {price}
                 </div>
             </CardBody>
 
@@ -108,7 +108,6 @@ export function BookingCard({ title, desc, img, price }) {
 }
 
 // isi card
-// Import library dan komponen lain yang diperlukan
 
 export function GalleryComponent() {
     const [content, setContent] = useState([]);
