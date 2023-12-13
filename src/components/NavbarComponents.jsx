@@ -8,7 +8,7 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import '../components/Navbar.css'
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, json } from "react-router-dom";
 import LoginModal from "./LoginModalComponent";
 import axios from "axios";
 
@@ -143,13 +143,17 @@ export function AvatarDefault() {
 
 
 
-// https://docs.material-tailwind.com/img/face-2.jpg
 
 export function DashboardNavbar2() {
     const [openNav, setOpenNav] = React.useState(false);
     const [userData, setUserData] = useState(null);
     const [isDropdownOpen, setDropdownOpen] = useState(false);
 
+    const getData = () => {
+        const data = localStorage.getItem("user");
+        setUserData(JSON.parse(data));
+        console.log('data fungsi', JSON.parse(data));
+    }
 
 
     const handleWindowResize = () =>
@@ -167,19 +171,9 @@ export function DashboardNavbar2() {
 
 
     React.useEffect(() => {
-        // Buat fungsi untuk mendapatkan informasi pengguna
-        const fetchUserData = async () => {
-            try {
-                const response = await axios.get('http://localhost/Database/Login.php');
-                // Respon dari backend harus berisi informasi pengguna
-                setUserData(response.data);
-            } catch (error) {
-                console.error('Error fetching user data:', error);
-            }
-        };
 
-        // Panggil fungsi untuk mengambil informasi pengguna
-        fetchUserData();
+        getData();
+
     }, []); // Pastikan hanya dijalankan sekali saat komponen dimuat
 
 
@@ -229,7 +223,7 @@ export function DashboardNavbar2() {
 
     return (
         <>
-
+            {console.log('user', userData)}
             <div className="col-span-3 w-full flex h-20" id="navbar2">
                 <div className="pt-3">
                     <a href="#">
@@ -302,8 +296,8 @@ export function DashboardNavbar2() {
                                 id="user-dropdown"
                             >
                                 <div className="px-4 py-3" id='dropdown'>
-                                    <span className="block text-sm text-gray-900 dark:text-white">Nama User</span>
-                                    <span className="block text-sm text-gray-500 truncate dark:text-gray-400">Email User</span>
+                                    <span className="block text-sm text-gray-900 dark:text-white">{userData.username}</span>
+                                    <span className="block text-sm text-gray-500 truncate dark:text-gray-400">{userData.email}</span>
                                 </div>
                                 <ul className="py-2" aria-labelledby="user-menu-button">
                                     {/* <li>
@@ -334,6 +328,9 @@ export function DashboardNavbar2() {
                                         <Link
                                             to='/home'
                                             className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                                        // onClick={() => {
+                                        //     localStorage.removeItem('user')
+                                        // }}
                                         >
                                             Sign out
                                         </Link>
@@ -355,6 +352,8 @@ export function DashboardNavbar2() {
 
 export function CartNavbar() {
     const [openNav, setOpenNav] = React.useState(false);
+
+    const [userData, setUserData] = React.useState({});
 
     const handleWindowResize = () =>
         window.innerWidth >= 960 && setOpenNav(false);
@@ -461,12 +460,6 @@ export function CartNavbar() {
                     </li>
                 </ul>
 
-                {/* <DarkModeSwitch
-                    checked={isDarkMode}
-                    onChange={toggleDarkMode}
-                    size={25}
-                    style={{ position: 'absolute', right: '200px', top: '30px' }}
-                /> */}
                 <div className="pt-4 ms-auto mr-32" id="avatarBox">
                     <div className="z-50 relative">
                         <button

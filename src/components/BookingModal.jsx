@@ -155,11 +155,11 @@ export function BasicModal() {
     );
 }
 
-export function BtnBooking() {
+export function BtnBooking({ title, desc, img, price }) {
     return (
         <div>
-            <Link to='/detailProduct'>
-                <button className=' bg-blue-600 hover:bg-blue-700 transition-colors duration-300 py-3 w-[100%] rounded-lg text-white'>
+            <Link to={`/detailProduct?title=${title}&desc=${desc}&img=${img}&price=${price}`}>
+                <button className=' bg-blue-600 hover:bg-blue-700 transition-colors duration-300 py-3 w-[100%] rounded-lg text-white' >
                     Booking Now
                 </button>
             </Link>

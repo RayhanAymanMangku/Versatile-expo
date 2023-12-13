@@ -101,7 +101,12 @@ export function BookingCard({ title, desc, img, price }) {
             </CardBody>
 
             <CardFooter className="pt-3">
-                <BtnBooking />
+                <BtnBooking
+                    title={title}
+                    desc={desc}
+                    img={img}
+                    price={price}
+                />
             </CardFooter>
         </Card>
     );
@@ -133,6 +138,7 @@ export function GalleryComponent() {
                             desc={cardContent.desc}
                             img={cardContent.img}
                             price={cardContent.price}
+
                         />
                     ))}
                 </div>

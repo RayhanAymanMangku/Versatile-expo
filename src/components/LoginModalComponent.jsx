@@ -166,38 +166,9 @@ export default function LoginModal({ isOpen, onClose }) {
     const [email, setEmail] = useState('');
     const [pwd, setPassword] = useState('');
     const navigate = useNavigate();
-    // const [errorMessage, setErrorMessage] = useState('');
-
-    //     // const handleLogin = () => {
-    //     //     if (!email || !pwd) {
-    //     //         alert("Email and password are required!");
-    //     //     } else {
-    //     //         const url = "http://localhost/Database/Login.php";
-
-    //     //         let formData = new FormData();
-    //     //         formData.append("email", email);
-    //     //         formData.append("pwd", pwd);
-
-    //     //         axios.post(url, formData)
-    //     //             .then(response => {
-    //     //                 alert(response.data);
-    //     //                 if (response.data.success) {
-    //     //                     // Pindah ke DashboardPage.jsx jika login berhasil
-    //     //                     onClose();  // Close the login modal
-    //     //                 } else {
-    //     //                     // Gagal login, arahkan ke landing page atau halaman lainnya
-    //     //                     navigate('/home');
-
-    //     //                 }
-    //     //             })
-    //     //             .catch(error => {
-    //     //                 alert("Error: " + error.message);
-    //     //                 console.error(error);
-    //     //             });
-    //     //     }
-    //     // }
 
     const handleLogin = () => {
+
         if (!email || !pwd) {
             alert("Email and password are required!");
             return;
@@ -212,6 +183,7 @@ export default function LoginModal({ isOpen, onClose }) {
         axios.post(url, formData)
             .then(response => {
                 if (response.data.success) {
+                    localStorage.setItem("user", JSON.stringify(response.data.data))
                     onClose();  // Tutup modal login jika login berhasil
                     navigate('/dashboard');  // Pindah ke DashboardPage.jsx jika login berhasil
                 } else {
@@ -239,7 +211,7 @@ export default function LoginModal({ isOpen, onClose }) {
                 {/* --global container -- */}
                 <div className="flex items-center justify-center min-h-screen bg-slate-50">
                     {/* --card container--- */}
-                    <form method='post' action='/Database/Login.php'>
+                    <form>
                         <div className="relative flex.flex-col m-6 space-y-10 bg-white shadow md:space-y-0 flex-row md:m-0" style={{ borderTopLeftRadius: '16px', borderBottomLeftRadius: '16px', borderTopRightRadius: '16px', borderBottomRightRadius: '16px' }}>
                             {/* --left side (contents) */}
                             <div className="p-6 md:p-20">
@@ -256,7 +228,7 @@ export default function LoginModal({ isOpen, onClose }) {
                                     <div className="font-thin text-cyan-700">
                                         <Link onClick={handleRegisterClick}>Don't have an account?</Link>
                                     </div>
-                                    <button className='w-full md:w-auto flex justify-center items-center p-4  space-x-4 font-bold text-white rounded-md  px-6 bg-blue-600 shadow-blue-100 hover:bg-opacity-90 shadow-sm hover:shadow-lg border transition hover:-translate-y-0.5 duration-150' onClick={handleLogin} name="next" id="next">
+                                    <button type='button' className='w-full md:w-auto flex justify-center items-center p-4  space-x-4 font-bold text-white rounded-md  px-6 bg-blue-600 shadow-blue-100 hover:bg-opacity-90 shadow-sm hover:shadow-lg border transition hover:-translate-y-0.5 duration-150' name="next" id="next" onClick={handleLogin}>
                                         Next
                                         <img
                                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='w-7' viewBox='0 0 24 24' strokeWidth='1.5' stroke='%23ffffff' fill='none' strokeLinecap='round' strokeLinejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none' /%3E%3Cline x1='5' y1='12' x2='19' y2='12' /%3E%3Cline x1='13' y1='18' x2='19' y2='12' /%3E%3Cline x1='13' y1='6' x2='19' y2='12' /%3E%3C/svg%3E"
@@ -318,29 +290,6 @@ export function RegistModal({ isOpen, onClose }) {
     const [username, setUsername] = useState('');
     const [pwd, setPassword] = useState('');
 
-    // const buttonNext = () => {
-    //     if (!email) {
-    //         alert("Email wajib di isi!");
-    //     } else if (!username) {
-    //         alert("Username wajib di isi!");
-    //     } else if (!pwd) {
-    //         alert("Password wajib di isi!");
-    //     } else {
-    //         const url = "http://localhost/Database/Register.php";
-
-    //         let fData = new FormData();
-    //         fData.append("email", email);
-    //         fData.append("username", username);
-    //         fData.append("pwd", pwd);
-
-    //         axios.post(url, fData)
-    //             .then(response => alert(response.data))
-    //             .catch(error => {
-    //                 alert("Error: " + error.message);
-    //                 console.error(error); // Log error ke konsol
-    //             });
-    //     }
-    // };
 
     const buttonNext = () => {
         if (!email) {

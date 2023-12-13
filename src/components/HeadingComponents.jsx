@@ -32,7 +32,9 @@ export function LandingPageHeading() {
                     <h1 className="text-left font-semibold text-white mt-36 ms-36 sm:text-3xl md:text-5xl w-[520px]">Entertainment Right In Front of you. Book your tickets Now</h1>
                     <p className="text-left font-light text-gray-300 mt-7 ms-36 w-[500px]" style={fontFamily}>Easy Booking, Guaranteed Entertainment.</p>
                     <button className="bg-blue-700 hover:bg-blue-800 transition-colors text-white px-4 py-1 rounded-md duration-300 mt-5 ms-36">
-                        <Link to='/dashboard' className='font-normal' style={fontFamily}>Get Started</Link>
+                        {/* <Link to='#result' className='font-normal' style={fontFamily}>Get Started</Link> */}
+                        <a href='#result' className='font-normal' style={fontFamily}>Get Started</a>
+
                     </button>
                 </div>
             </div>
@@ -44,7 +46,7 @@ export function LandingPageHeading() {
                     <div className="text-white text-4xl font-semibold mt-[-500px] pt-[400px] flex w-full" id='aboutSec'>
                         <div className='ms-[140px] bg-gradient-to-r text-transparent bg-clip-text from-blue-500 to-white' id='textAbout'>About Us</div>
                     </div>
-                    <HorizontalCard />
+                    <HorizontalCard id='result' />
                     <div className="text-white text-4xl font-semibold mt-12 pt-16 flex w-full mb-[-110px]">
                         <div className='ms-[140px] bg-gradient-to-r text-transparent bg-clip-text from-blue-500 to-white' id='textServices'>Services</div>
                     </div>
@@ -92,9 +94,9 @@ export function ProfileCard({ name, position, img }) {
 
 
 
-export function HorizontalCard() {
+export function HorizontalCard({ id }) {
     return (
-        <Card className="w-[80%] flex-row mx-auto mt-8 h-[400px]" id='cardHeading'>
+        <Card className="cardHeading w-[80%] flex-row mx-auto mt-8 h-[400px]" id={id}>
             <CardHeader
                 shadow={false}
                 floated={false}
@@ -136,7 +138,7 @@ export function HorizontalCard() {
 
 
 
-export function DetailProductComponent() {
+export function DetailProductComponent({ title, desc, img, price }) {
     const [quantity, setQuantity] = useState(3); // Inisialisasi state dengan nilai awal 3
 
     const handleIncrement = () => {
@@ -164,15 +166,15 @@ export function DetailProductComponent() {
                 <img
                     className="h-full w-full rounded-xl object-cover object-center"
                     alt="nature image"
-                    src='https://media.istockphoto.com/id/1389768890/id/foto/seaworld-san-diego.jpg?s=1024x1024&w=is&k=20&c=qcUGB_p-zWWFZ79LthaiA-eN_mTasaLxm4fWsyNHIa8='
+                    src={img}
                 />
                 <figcaption className="absolute bottom-8 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 justify-between rounded-xl border border-white bg-white/75 py-4 px-6 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm">
                     <div>
                         <Typography variant="h5" color="blue-gray">
-                            {/* {name} */} Sea World
+                            {title}
                         </Typography>
                         <Typography color="gray" className="mt-2 font-normal">
-                            Jakarta, Indonesia {/* {location} */}
+                            .
                         </Typography>
                     </div>
                 </figcaption>
@@ -186,7 +188,7 @@ export function DetailProductComponent() {
                             Description
                         </Typography>
                         <div className="w-[80%] text-start text-white mt-2">
-                            {/* {description} */}Seaworld Ancol adalah taman hiburan keluarga di Jakarta, menyajikan atraksi lumba-lumba, pertunjukan satwa, dan wahana seru untuk pengalaman liburan yang mengesankan.
+                            {desc}
                         </div>
                     </div>
                 </div>
@@ -196,7 +198,7 @@ export function DetailProductComponent() {
                         <Card className=" w-[400px] ms-auto">
                             <CardBody>
                                 <Typography variant="h5" className="mb-2 pb-1 text-gray-700 border-b">
-                                    Rp. 70.000 / Ticket {/* {harga} */}
+                                    Rp. {price}
                                 </Typography>
                                 <form action="">
                                     <div className="relative flex items-center max-w-[11rem]">
