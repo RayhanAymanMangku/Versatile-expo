@@ -347,7 +347,7 @@ export function RegistModal({ isOpen, onClose }) {
                                 <p className="max-w-sm mb-12 font-light text-gray-600">
                                     Register your account to get full access.
                                 </p>
-                                <input type="username" className="w-full p-3 border border-gray-300 rounded-md placeholder:font-light" placeholder='enter your username' name="username" id="username" required value={username} onChange={(e) => setUsername(e.target.value)} />
+                                <input type="username" className="w-full p-3 border border-gray-300 rounded-md placeholder:font-light mb-3" placeholder='enter your username' name="username" id="username" required value={username} onChange={(e) => setUsername(e.target.value)} />
                                 <input type="email" className="w-full p-3 border border-gray-300 rounded-md placeholder:font-light" placeholder='enter your email address' name="email" id="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
                                 <input type="password" className="w-full p-3 border border-gray-300 rounded-md placeholder:font-light mt-3" placeholder='enter your password' name="pwd" id="pwd" required value={pwd} onChange={(e) => setPassword(e.target.value)} />
                                 {/* --Middle content-- */}

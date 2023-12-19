@@ -13,9 +13,7 @@ const Detail_Product = () => {
     const desc = searchParams.get('desc');
     const img = searchParams.get('img');
     const price = searchParams.get('price');
-    // useEffect(() => {
 
-    // }, []);
 
     return (
         <>

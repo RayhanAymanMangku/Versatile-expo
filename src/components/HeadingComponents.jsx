@@ -139,27 +139,38 @@ export function HorizontalCard({ id }) {
 
 
 export function DetailProductComponent({ title, desc, img, price }) {
-    const [quantity, setQuantity] = useState(3); // Inisialisasi state dengan nilai awal 3
+    const [quantity, setQuantity] = useState(1); // Inisialisasi state dengan nilai awal 1
+    const [selectedDate, setSelectedDate] = useState('');
+    const [totalPrice, setTotalPrice] = useState(price); // Harga awal sejumlah guest 1
+
+    const handleUpdateTotalPrice = (newTotalPrice) => {
+        setTotalPrice(newTotalPrice);
+    }
 
     const handleIncrement = () => {
-        // Logika penambahan nilai saat tombol increment diklik
         if (quantity < 5) {
             setQuantity((prevQuantity) => prevQuantity + 1);
+            updateTotalPrice(quantity + 1)
         }
     };
 
     const handleDecrement = () => {
-        // Logika pengurangan nilai saat tombol decrement diklik
         if (quantity > 1) {
             setQuantity((prevQuantity) => prevQuantity - 1);
+            updateTotalPrice(quantity - 1)
+
         }
     };
-
-    const [selectedDate, setSelectedDate] = useState('');
 
     const handleDateChange = (event) => {
         setSelectedDate(event.target.value);
     };
+
+    const updateTotalPrice = (guestCount) => {
+        const newTotalPrice = guestCount * price;
+        handleUpdateTotalPrice(newTotalPrice);
+    };
+
     return (
         <>
             <figure className="relative h-96 w-[80%] mx-auto mt-12">
@@ -195,10 +206,28 @@ export function DetailProductComponent({ title, desc, img, price }) {
                 <div className="w-[50%] p-4">
                     {/* Konten Kolom 2 */}
                     <div className="p-4">
-                        <Card className=" w-[400px] ms-auto">
-                            <CardBody>
+                        <Card className=" w-[350px] ms-auto">
+                            <CardBody className='p-8 ml-3'>
+                                <div className="group inline-flex flex-wrap items-center gap-3">
+                                    <span className="cursor-pointer rounded-full border border-gray-300 bg-gray-900/5 p-3 text-gray-600 transition-colors hover:border-gray-900/10  hover:!opacity-100 group-hover:opacity-70">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                            className="h-5 w-5"
+                                        >
+                                            <path d="M12 7.5a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
+                                            <path
+                                                fillRule="evenodd"
+                                                d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 14.625v-9.75zM8.25 9.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM18.75 9a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V9.75a.75.75 0 00-.75-.75h-.008zM4.5 9.75A.75.75 0 015.25 9h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75V9.75z"
+                                                clipRule="evenodd"
+                                            />
+                                            <path d="M2.25 18a.75.75 0 000 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 00-.75-.75H2.25z" />
+                                        </svg>
+                                    </span>
+                                </div>
                                 <Typography variant="h5" className="mb-2 pb-1 text-gray-700 border-b">
-                                    Rp. {price}
+                                    Rp. {price} / Guest
                                 </Typography>
                                 <form action="">
                                     <div className="relative flex items-center max-w-[11rem]">
@@ -260,9 +289,15 @@ export function DetailProductComponent({ title, desc, img, price }) {
                                             pattern="\d{4}-\d{2}-\d{2}"
                                         />
                                     </div>
+                                    <Typography variant="h5" className=" text-gray-700 mt-2">
+                                        Total Price
+                                    </Typography>
+                                    <div className="w-[175px] h-[40px] border border-gray-300 bg-gray-50 rounded-lg mt-1 text-center pt-2 text-gray-900" id='colTotalPrice'>
+                                        Rp. {totalPrice.toLocaleString()}
+                                    </div>
                                 </form>
                             </CardBody>
-                            <CardFooter className="pt-0">
+                            <CardFooter className="pt-0  ml-3">
                                 <Link to='/transactionPage'>
                                     <BtnPayment />
                                 </Link>
@@ -314,7 +349,7 @@ export function TransactionHeading() {
                                 Total Price
                             </Typography>
                             <Typography color="gray" className="mt-2 font-normal">
-                                Rp. 100.000 {/* Ganti dengan logika kalkulasi total */}
+                                Rp.
                             </Typography>
                         </div>
                     </div>
@@ -417,7 +452,7 @@ export function CardCart() {
                                 Total Price
                             </Typography>
                             <Typography color="gray" className="mt-2 font-normal">
-                                Rp. 100.000 {/* Ganti dengan logika kalkulasi total */}
+                                Rp.
                             </Typography>
                         </div>
                     </div>
