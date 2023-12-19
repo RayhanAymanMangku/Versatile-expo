@@ -50,7 +50,7 @@ export function LandingPageHeading() {
                     <div className="text-white text-4xl font-semibold mt-12 pt-16 flex w-full mb-[-110px]">
                         <div className='ms-[140px] bg-gradient-to-r text-transparent bg-clip-text from-blue-500 to-white' id='textServices'>Services</div>
                     </div>
-                    <GallerySection />
+                    <GallerySection2 />
                 </div>
             </section>
 
@@ -503,7 +503,7 @@ const GallerySection = () => {
     return (
         <div class="container ms-16 px-5 py-2 lg:px-32 lg:pt-24 mt-14">
             <div class="-m-1 flex flex-wrap md:-m-2">
-                <div class="flex w-1/2 flex-wrap">
+                {/* <div class="flex w-1/2 flex-wrap">
                     <div class="w-1/2 p-1 md:p-2">
                         <img
                             alt="gallery"
@@ -522,7 +522,7 @@ const GallerySection = () => {
                             class="block h-full w-full rounded-lg object-cover object-center hover:opacity-75 transition-opacity duration-300"
                             src="https://i.pinimg.com/originals/45/05/46/45054604b7873b602df111c3af7a53ed.jpg" />
                     </div>
-                </div>
+                </div> */}
                 <div class="flex w-1/2 flex-wrap mt-1">
                     <p className='ml-12 text-white text-lg'>Thank you for choosing our services. We are proud to offer the best entertainment experience through access tickets to the fun-filled carnival, refreshing water park, natural beauty at the zoo, and unforgettable sightseeing trips. Find fun and excitement with us in every ticket the one you choose! <br /> If you have a question you can send by email to <span className='font-semibold text-blue-500'>versatile@company.co.id</span> </p>
                     <div className=' mt-[310px]'>
@@ -551,3 +551,35 @@ const GallerySection = () => {
 };
 
 export default GallerySection;
+
+export function GallerySection2() {
+    return (
+        <div class="container ms-16 px-5 py-2 lg:px-32 lg:pt-24 mt-14">
+            <div className="flex flex-row">
+                <div className="w-[50%] ml-[-30px]">
+                    <p className=' text-white text-lg'>Thank you for choosing our services. We are proud to offer the best entertainment experience through access tickets to the fun-filled carnival, refreshing water park, natural beauty at the zoo, and unforgettable sightseeing trips. Find fun and excitement with us in every ticket the one you choose! <br /> If you have a question you can send by email to <span className='font-semibold text-blue-500'>versatile@company.co.id</span> </p>
+                </div>
+                <div className="w-[50%] mx-auto mt-[-30px]">
+                    <form action="#" method='POST'>
+                        <label htmlFor="message">
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                cols="50"
+                                className="w-[500px] h-[200px] mt-8 ml-12 rounded-xl p-2"
+                                placeholder="Give us your feedback"
+                            >
+                            </textarea>
+
+                        </label>
+                        <button type="submit" className='px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors duration-300 ml-12 mt-2'>
+                            Send
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    );
+};
+
