@@ -297,7 +297,7 @@ export function DetailProductComponent({ title, desc, img, price }) {
                                     </div>
                                 </form>
                             </CardBody>
-                            <CardFooter className="pt-0  ml-3">
+                            <CardFooter className="pt-0  ml-5">
                                 <Link to='/transactionPage'>
                                     <BtnPayment />
                                 </Link>
@@ -567,7 +567,7 @@ export function GallerySection2() {
                                 name="message"
                                 rows="4"
                                 cols="50"
-                                className="w-[500px] h-[200px] mt-8 ml-12 rounded-xl p-2"
+                                className="w-[500px] h-[200px] mt-8 ml-12 rounded-xl p-2 bg-gray-50"
                                 placeholder="Give us your feedback"
                             >
                             </textarea>
